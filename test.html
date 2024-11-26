@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱吗？</title>
+</head>
+
+<body>
+    <div class="box">
+        <input type="button" value="爱你" class="btn" onclick="love()">
+        <input type="button" value="不爱了" class="btn" onclick="nolove()">
+    </div>
+</body>
+
+</html>
+<style>
+    .box {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        border: 2px solid green;
+        text-align: center;
+    }
+</style>
+<script>
+
+    function love() {
+        window["test_love"]("I love you").then(result => {
+            alert(result);
+        }).catch(err => {
+            alert(err);
+        });
+    }
+    function nolove() {
+        window["test_love"]("I hate you").then(result => {
+            alert(result);
+        }).catch(err => {
+            alert(err);
+        });
+    }
+</script>
